@@ -1,0 +1,543 @@
+/* importa a fonte montserrat do google */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* resetando margens, preenchimentos e definindo box-sizing para todos os elementos */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* remove o estilo padrão das listas */
+ul {
+  list-style-type: none;
+}
+
+/* remove o sublinhado dos links */
+a {
+  text-decoration: none;
+}
+
+/* estilo de fundo e sombra do menu de navegação */
+nav {
+  background: #ffcbdb;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* estilo do cabeçalho do menu de navegação */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* estilo do botão de alternância do menu */
+.nav-toggle {
+  font-size: 1.5rem;
+  color: #4f4045;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+/* efeito ao passar o mouse sobre o botão de alternância */
+.nav-toggle:hover {
+  color: #292325; 
+  transform: rotate(90deg); 
+}
+
+/* estilo dos links no menu */
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: #4f4045; 
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+}
+
+/* efeito ao passar o mouse sobre os links */
+.links a:hover {
+  background: #ffcbdb; 
+  color: #292325; 
+  padding-left: 1.5rem; 
+}
+
+/* inicializa os links com altura 0 e sem exibição */
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+/* classe para exibir os links ao ativar */
+.show-links {
+  height: 80px;
+}
+
+/* media query para telas maiores que 800px */
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none; 
+  }
+
+  /* exibe os links em linha em telas maiores */
+  .links {
+    height: auto;
+    display: flex;
+  }
+
+  /* ajusta o estilo dos links */
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}
+
+/* estilo do rodapé */
+.footer {
+  background-color: #ffcbdb; 
+  color: #4f4045; 
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 0; 
+  text-align: center; 
+}
+
+/* estilo do título no rodapé */
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* estilo do texto no rodapé */
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* estilo do parágrafo "sobre nós" */
+.aboutus-p {
+  margin-bottom: 1.2rem;
+}
+
+/* estilo dos ícones de mídia social */
+.social-media a {
+  font-size: 1.2rem; 
+  color: #4f4045;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* efeito ao passar o mouse sobre os ícones de mídia social */
+.social-media a:hover {
+  color: #292325;
+}
+
+/* estilo do formulário */
+.form-container {
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffcbdb;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+/* ajusta o tamanho do formulário em telas pequenas */
+@media (max-width: 768px) {
+  .form-container {
+    width: 70%; 
+  }
+}
+
+/* ajusta o tamanho do formulário em telas muito pequenas */
+@media (max-width: 480px) {
+  .form-container {
+    width: 90%; 
+    padding: 15px; 
+  }
+}
+
+/* estilo do título do formulário */
+.book-form h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #4f4045;
+  margin-bottom: 0.5rem;
+}
+
+/* estilo dos grupos de formulário */
+.form-group {
+  margin-bottom: 6px;
+}
+
+/* estilo dos rótulos dos campos do formulário */
+form .form-group label {
+  font-family: 'Montserrat', sans-serif;
+  color: #4f4045;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  display: block;
+}
+
+/* estilo dos campos de entrada */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #4f4045;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* efeito ao focar no campo de entrada */
+.form-control:focus {
+  border-color: #f17ea1; 
+  outline: none;
+}
+
+/* estilo para áreas de texto */
+textarea.form-control {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #4f4045;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+/* efeito ao focar na área de texto */
+textarea.form-control:focus {
+  border-color: #f17ea1;
+  outline: none;
+}
+
+/* estilo do botão principal */
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* estilo do botão primário */
+.btn-primary {
+  background-color: #fc85c0;
+  font-weight: bold;
+  color: #292325;
+}
+
+/* efeito ao passar o mouse sobre o botão primário */
+.btn-primary:hover {
+  background-color: #f17ea1;
+}
+
+/* estilo do container de busca */
+.search-container {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffcbdb;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* estilo do título de busca */
+.search-container h2 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* estilo dos grupos de busca */
+.form-group {
+  margin-bottom: 10px;
+}
+
+/* estilo do campo de busca */
+input[type="text"], select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+/* estilo dos resultados da busca */
+.search-results {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* estilo do título dos resultados da busca */
+.search-results h3 {
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* estilo da lista de livros */
+.book-list {
+  display: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* estilo dos itens da lista de livros */
+.book-item {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* estilo do título do item do livro */
+.book-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* estilo do parágrafo do item do livro */
+.book-item p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+/* estilo dos botões de editar e excluir */
+.edit-btn, .delete-btn {
+  margin-top: 5px;
+  background-color: #fc85c0;
+  font-weight: bold;
+  color: #292325;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* efeito ao passar o mouse sobre o botão de excluir */
+.delete-btn:hover {
+  background-color: #f17ea1;
+}
+
+/* efeito ao passar o mouse sobre o botão de editar */
+.edit-btn:hover {
+  background-color: #f17ea1;
+}
+
+/* estilo do botão limpar */
+.clear-btn {
+  margin-top: 10px;
+  background-color: #fc85c0;
+  font-weight: bold;
+  color: #292325;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* efeito ao passar o mouse sobre o botão limpar */
+.clear-btn:hover {
+  background-color: #f17ea1;
+}
+
+/* estilo para o parágrafo dentro do item do livro */
+.book-item p {
+  font-size: 0.9rem; 
+  color: #555; 
+}
+
+/* estilo para a classe de alerta de erro */
+.alert-danger {
+  color: #721c24; 
+  background: #f8d7da; 
+}
+
+/* estilo para a classe de alerta de sucesso */
+.alert-success {
+  color: #155724; 
+  background: #d4edda; 
+}
+
+/* estilo para a mensagem de vazio */
+.empty-message {
+  font-family: "Montserrat", sans-serif; 
+  margin-top: 10px; 
+  margin-bottom: 6px;
+}
+
+/* classe invisível (usada para esconder elementos) */
+.invisible {
+  display: none !important;
+}
+
+/* estilo geral da modal */
+.modal {
+  color: #4f4045; 
+  font-family: "Montserrat", sans-serif; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  z-index: 1000; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* conteúdo da modal */
+.modal-content {
+  background-color: #ffcbdb; /* Cor de fundo */
+  padding: 25px;
+  position: absolute; /* Posiciona a modal no centro da tela */
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%); /* Centraliza a modal */
+  border-radius: 5px; /* Borda arredondada */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* botão de fechar da modal */
+.close-btn {
+  float: right; /* Posiciona o botão no canto superior direito */
+  font-size: 1.5rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de mão para indicar que é clicável */
+}
+
+/* botão de salvar ou editar */
+.save-edit-btn {
+  background-color: #fc85c0; /* Cor de fundo */
+  font-weight: bold; /* Texto em negrito */
+  color: #292325; /* Cor do texto */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 1rem; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  display: block; 
+}
+
+/* efeito ao passar o mouse sobre o botão de salvar/editar */
+.save-edit-btn:hover {
+  background-color: #f17ea1; /
+}
+
+/* estilo do título dentro da modal */
+.modal h2 {
+  margin-bottom: 5px; 
+}
+
+/* estilo dos rótulos dentro da modal */
+.modal label {
+  display: block; 
+  margin-bottom: 2px; 
+}
+
+/* estilo dos campos de entrada na modal */
+.modal input {
+  width: 100%; 
+  height: 100%; 
+  border: 1px solid #4f4045; 
+  margin-top: 2px; 
+  margin-bottom: 5px; 
+  border-radius: 4px; 
+}
+
+/* estilo do campo de número e select */
+input[type="number"], select {
+  padding: 8px; 
+}
+
+/* estilo ao focar no campo de entrada */
+.modal input:focus {
+  border-color: #f17ea1; 
+  outline: none; 
+}
+
+/* estilo da área de texto dentro da modal */
+.modal textarea {
+  padding: 8px; 
+  width: 100%; 
+  font-family: "Montserrat", sans-serif;
+  margin-top: 2px; 
+  margin-bottom: 5px;
+  border-radius: 4px; 
+  border: 1px solid #4f4045; 
+}
+
+/* estilo ao focar na área de texto */
+.modal textarea:focus {
+  border-color: #f17ea1; 
+  outline: none; 
+}
+
+/* media query para telas menores que 768px */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 70%; 
+  }
+}
+
+/* media query para telas menores que 480px */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 80%; 
+    padding: 8px; 
+  }
+
+  /* ajusta o botão de salvar/editar */
+  .save-edit-btn {
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+  }
+
+  /* ajusta o título da modal */
+  .modal h2 {
+    font-size: 1.2rem; 
+  }
+}
+
+

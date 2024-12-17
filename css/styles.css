@@ -1,0 +1,294 @@
+/* importando a fonte Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* resetando margens, preenchimentos e box-sizing */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* removendo marcadores das listas */
+ul {
+  list-style-type: none;
+}
+
+/* removendo sublinhado dos links */
+a {
+  text-decoration: none;
+}
+
+/* estilo do menu de navegação */
+nav {
+  background: #ffcbdb;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* sombra leve */
+}
+
+/* estrutura do cabeçalho de navegação */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* estilo do botão de alternância do menu */
+.nav-toggle {
+  font-size: 1.5rem;
+  color: #4f4045;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+/* efeito de hover no botão de alternância */
+.nav-toggle:hover {
+  color: #292325;
+  transform: rotate(90deg);
+}
+
+/* estilo dos links no menu */
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: #4f4045;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+}
+
+/* efeito de hover nos links */
+.links a:hover {
+  background: #ffcbdb;
+  color: #292325;
+  padding-left: 1.5rem;
+}
+
+/* estrutura do container de links */
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+/* exibição dos links quando o menu é aberto */
+.show-links {
+  height: 80px;
+}
+
+/* responsividade para telas maiores que 800px */
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    height: auto;
+    display: flex;
+  }
+
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}
+
+/* estilo do rodapé */
+.footer {
+  background-color: #ffcbdb;
+  color: #4f4045;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* estilo do título do rodapé */
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* estilo do parágrafo do rodapé */
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* estilo para o parágrafo "sobre nós" */
+.aboutus-p {
+  margin-bottom: 1.2rem;
+}
+
+/* estilo dos links das redes sociais */
+.social-media a {
+  font-size: 1.2rem;
+  color: #4f4045;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* efeito de hover nos links das redes sociais */
+.social-media a:hover {
+  color: #292325;
+}
+
+/* estrutura do conteúdo principal */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+/* estilo do container do formulário */
+.form-container {
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffcbdb;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+  .form-container {
+    width: 70%;
+  }
+}
+
+/* responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+  .form-container {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* estilo do título do formulário */
+.book-form h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  color: #4f4045;
+  margin-bottom: 0.5rem;
+}
+
+/* estilo do grupo de campos no formulário */
+.form-group {
+  margin-bottom: 6px;
+}
+
+/* estilo dos rótulos dos campos no formulário */
+form .form-group label {
+  font-family: 'Montserrat', sans-serif;
+  color: #4f4045;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  display: block;
+}
+
+/* estilo dos campos de entrada no formulário */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #4f4045;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+/* estilo do campo de entrada ao ser focado */
+.form-control:focus {
+  border-color: #f17ea1;
+  outline: none;
+}
+
+/* estilo das áreas de texto no formulário */
+textarea.form-control {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  border: 1px solid #4f4045;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+/* estilo da área de texto ao ser focada */
+textarea.form-control:focus {
+  border-color: #f17ea1;
+  outline: none;
+}
+
+/* estilo do botão no formulário */
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* estilo do botão primário */
+.btn-primary {
+  background-color: #fc85c0;
+  font-weight: bold;
+  color: #292325;
+}
+
+/* efeito de hover no botão primário */
+.btn-primary:hover {
+  background-color: #f17ea1;
+}
+
+/* estilo das mensagens de alerta */
+.alert {
+  margin-bottom: 1rem;
+  height: 1.25rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 0.25rem;
+  letter-spacing: 0.25rem;
+}
+
+/* estilo para alertas de erro */
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+}
+
+/* estilo para alertas de sucesso */
+.alert-success {
+  color: #155724;
+  background: #d4edda;
+}
