@@ -59,5 +59,7 @@ booktracker/
 
 # 👤 Autor
 Ana Luisa Augusto Barbosa
+
 GitHub: https://github.com/analuisaabarbosa
+
 LinkedIn: https://www.linkedin.com/in/analuisaabarbosa/
