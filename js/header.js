@@ -11,6 +11,7 @@ function componentVerify() {
 
 function loadHeader(headers) {
   for (const h of headers) {
+    // mapeando os elementos
     var header = document.createElement("header");
 
     var nav = document.createElement("nav");
@@ -52,9 +53,10 @@ function loadHeader(headers) {
     var liAboutus = document.createElement("li");
 
     var aboutUs = document.createElement("a");
-    aboutUs.setAttribute("href", "#aboutus");
+    aboutUs.setAttribute("href", "aboutUs.html");
     aboutUs.textContent = "About Us";
 
+    // montando a estrutura final do header
     divHeader.appendChild(iconImg);
     divHeader.appendChild(btnToggle);
     btnToggle.appendChild(i);
@@ -69,6 +71,7 @@ function loadHeader(headers) {
     nav.appendChild(divCenter);
     header.appendChild(nav);
 
+    // limpando o conteúdo atual e adicionando o novo header
     h.innerHTML = "";
     h.appendChild(header);
   }
