@@ -1,0 +1,24 @@
+/* estilo das mensagens de alerta */
+.alert {
+  margin-bottom: 1rem;
+  height: 1.25rem;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  font-size: 0.7rem;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 0.25rem;
+  letter-spacing: 0.25rem;
+}
+
+/* estilo para alertas de erro */
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+}
+
+/* estilo para alertas de sucesso */
+.alert-success {
+  color: #155724;
+  background: #d4edda;
+}

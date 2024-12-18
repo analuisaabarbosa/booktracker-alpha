@@ -1,0 +1,22 @@
+/* estilo do rodapé */
+.footer {
+  background-color: #ffcbdb;
+  color: #4f4045;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* estilo do título do rodapé */
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* estilo do parágrafo do rodapé */
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
