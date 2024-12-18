@@ -4,6 +4,12 @@
   background-color: #ffcbdb;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.search-results {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -18,7 +24,6 @@ h3 {
   font-size: 1.4rem;
   color: #4f4045;
   margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
 }
 
 .clear-btn {
