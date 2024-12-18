@@ -1,0 +1,19 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #4f4045;
+}
+
+h2 {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.about-us {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.about-ul {
+    margin-bottom: 18px;
+    text-align: center;
+}

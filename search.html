@@ -51,7 +51,7 @@
           </div>
           <!-- botão para submeter o formulário de busca -->
           <div class="form-group">
-            <button type="submit" class="btn btn-primary" id="search-btn">Buscar</button>
+            <button type="button" class="btn btn-primary" id="search-btn">Buscar</button>
           </div>
         </form>
       </div>
@@ -73,7 +73,41 @@
 
     <div class="footer"></div>
 
-    <script src="js/app.js"></script>
+    <div id="edit-modal" class="modal invisible">
+      <div class="modal-content">
+        <!-- botão para fechar a modal -->
+        <span class="close-btn" onclick="">&times;</span>
+        <!-- título da modal -->
+        <h2>Editar Livro</h2>
+        <!-- formulário de edição -->
+        <form id="edit-form">
+          <label for="edit-title">Título</label>
+          <input type="text" id="edit-title" name="title" required>
+          <label for="edit-author">Autor</label>
+          <input type="text" id="edit-author" name="author" required>  
+          <label for="edit-year">Ano de Publicação</label>
+          <input type="number" id="edit-year" name="year" required>
+          <label for="edit-pages">Número de Páginas</label>
+          <input type="number" id="edit-pages" name="pages" required>
+          <label for="edit-genre">Gênero</label>
+          <select id="edit-genre" name="genre" required>
+            <option value="" disabled selected>Selecione o gênero</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Romance">Romance</option>
+            <option value="Aventura">Suspense</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Biografia">Biografia</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <label for="edit-description">Descrição</label>
+          <textarea id="edit-description" name="description" rows="4" required></textarea>
+          <!-- botão de submissão -->
+          <button type="submit" class="save-edit-btn">Salvar Alterações</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/appSearch.js"></script>
     <script src="js/header.js"></script>
     <script src="js/nav.js"></script>
     <script src="js/footer.js"></script>

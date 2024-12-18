@@ -8,13 +8,76 @@ document.addEventListener("DOMContentLoaded", function () {
   const bookList = document.getElementById("book-list"); // contêiner onde os livros são listados
   const clearBtn = document.querySelector(".clear-btn"); // botão para limpar a pesquisa
   const editForm = document.getElementById("edit-form"); // formulário de edição de livro
-
   // seleção do modal de edição
   const modal = document.getElementById("edit-modal"); // modal de edição
   const closeModalBtn = document.querySelector(".close-btn"); // botão para fechar a modal
-
   const saveEditBtn = document.querySelector(".save-edit-btn"); // botão de salvar edição
   let currentBookIndex = null; // índice do livro sendo editado
+
+  // funções
+
+  // função para recuperar os livros do localStorage
+  function getBooks() {
+    return JSON.parse(localStorage.getItem("books")) || []; // retorna os livros ou um array vazio
+  }
+
+  // função para exibir a lista de livros
+  function displayBooks(filteredBooks = null) {
+    const books = filteredBooks || getBooks(); // se não houver filtro, exibe todos os livros
+    bookList.innerHTML = ""; // limpa a lista de livros
+
+    if (books.length === 0) {
+      bookList.innerHTML = `<p class="empty-message">Nenhum livro na lista</p>`; // mensagem caso não haja livros
+      return;
+    }
+
+    books.forEach((book, index) => {
+      // cria um item de livro
+      const bookItem = document.createElement("li");
+      bookItem.classList.add("book-item");
+      bookItem.innerHTML = `
+          <h3>${book.title}</h3>
+          <p><strong>Autor:</strong> ${book.author}</p>
+          <p><strong>Ano de Publicação:</strong> ${book.year}</p>
+          <p><strong>Páginas:</strong> ${book.pages}</p>
+          <p><strong>Gênero:</strong> ${book.genre}</p>
+          <p><strong>Descrição:</strong> ${book.description}</p>
+          <button class="edit-btn" data-index="${index}">Editar</button>
+          <button class="delete-btn" data-index="${index}">Deletar</button>
+        `;
+
+      const editBtn = bookItem.querySelector(".edit-btn"); // botão de editar
+      const deleteBtn = bookItem.querySelector(".delete-btn"); // botão de deletar
+
+      // evento de clique para abrir a modal de edição
+      editBtn.addEventListener("click", function () {
+        modal.classList.remove("invisible");
+        const bookToEdit = books[index];
+        openModal(bookToEdit, index); // abre a modal e preenche com os dados do livro
+      });
+
+      // evento de clique para excluir o livro
+      deleteBtn.addEventListener("click", function () {
+        const confirmed = confirm(
+          "Você tem certeza que deseja excluir este livro?" // confirma a exclusão
+        );
+        if (confirmed) {
+          books.splice(index, 1); // remove o livro do array
+
+          if (books.length === 0) {
+            localStorage.removeItem("books"); // remove do localStorage se não houver mais livros
+          } else {
+            localStorage.setItem("books", JSON.stringify(books)); // atualiza o localStorage
+          }
+
+          displayBooks(); // atualiza a lista de livros
+          displayAlert("Livro deletado com sucesso", "success"); // exibe mensagem de sucesso
+        }
+      });
+
+      bookList.appendChild(bookItem); // adiciona o item de livro à lista
+    });
+  }
 
   // função para abrir a modal e preencher os campos de edição
   function openModal(bookToEdit, index) {
@@ -54,69 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
       currentBookIndex = null; // limpa o índice do livro
     }
   });
-
-  // função para recuperar os livros do localStorage
-  function getBooks() {
-    return JSON.parse(localStorage.getItem("books")) || []; // retorna os livros ou um array vazio
-  }
-
-  // função para exibir a lista de livros
-  function displayBooks(filteredBooks = null) {
-    const books = filteredBooks || getBooks(); // se não houver filtro, exibe todos os livros
-    bookList.innerHTML = ""; // limpa a lista de livros
-
-    if (books.length === 0) {
-      bookList.innerHTML = `<p class="empty-message">Nenhum livro na lista</p>`; // mensagem caso não haja livros
-      return;
-    }
-
-    books.forEach((book, index) => {
-      // cria um item de livro
-      const bookItem = document.createElement("li");
-      bookItem.classList.add("book-item");
-      bookItem.innerHTML = `
-        <h3>${book.title}</h3>
-        <p><strong>Autor:</strong> ${book.author}</p>
-        <p><strong>Ano de Publicação:</strong> ${book.year}</p>
-        <p><strong>Páginas:</strong> ${book.pages}</p>
-        <p><strong>Gênero:</strong> ${book.genre}</p>
-        <p><strong>Descrição:</strong> ${book.description}</p>
-        <button class="edit-btn" data-index="${index}">Editar</button>
-        <button class="delete-btn" data-index="${index}">Deletar</button>
-      `;
-
-      const editBtn = bookItem.querySelector(".edit-btn"); // botão de editar
-      const deleteBtn = bookItem.querySelector(".delete-btn"); // botão de deletar
-
-      // evento de clique para abrir a modal de edição
-      editBtn.addEventListener("click", function () {
-        modal.classList.remove("invisible");
-        const bookToEdit = books[index];
-        openModal(bookToEdit, index); // abre a modal e preenche com os dados do livro
-      });
-
-      // evento de clique para excluir o livro
-      deleteBtn.addEventListener("click", function () {
-        const confirmed = confirm(
-          "Você tem certeza que deseja excluir este livro?" // confirma a exclusão
-        );
-        if (confirmed) {
-          books.splice(index, 1); // remove o livro do array
-
-          if (books.length === 0) {
-            localStorage.removeItem("books"); // remove do localStorage se não houver mais livros
-          } else {
-            localStorage.setItem("books", JSON.stringify(books)); // atualiza o localStorage
-          }
-
-          displayBooks(); // atualiza a lista de livros
-          displayAlert("Livro deletado com sucesso", "success"); // exibe mensagem de sucesso
-        }
-      });
-
-      bookList.appendChild(bookItem); // adiciona o item de livro à lista
-    });
-  }
 
   // função para fechar a modal
   closeModalBtn.addEventListener("click", function () {
