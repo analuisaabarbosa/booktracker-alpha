@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booktracker - Search</title>
+    <link rel="stylesheet" href="css/navStyle.css"/>
+    <link rel="stylesheet" href="css/footerStyle.css">
+    <link rel="stylesheet" href="css/searchStyle.css">
+    <link rel="stylesheet" href="css/formStyle.css">
+    <link rel="stylesheet" href="css/alertStyle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/imgs/favicon.png" type="image.png" />
+    <!-- usando cdn somente para o toggle -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header"></div>
+
+    <main>
+      <!-- container de busca -->
+      <div class="search-container">
+        <h2>Pesquisar Livros</h2>
+        <!-- formulário de busca -->
+        <form id="search-form" action="" method="GET">
+          <!-- campo para digitar o termo de pesquisa -->
+          <div class="form-group">
+            <label for="search-query"
+              >Buscar por título, autor:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="search-query"
+              name="query"
+              placeholder="Digite um termo de pesquisa..."
+            />
+          </div>
+          <!-- campo para filtrar por gênero -->
+          <div class="form-group">
+            <label for="search-genre">Filtrar por gênero:</label>
+            <select id="search-genre" class="form-control" name="genre">
+              <option value="" disabled selected>Selecione o gênero</option>
+              <option value="Ficção">Ficção</option>
+              <option value="Romance">Romance</option>
+              <option value="Suspense">Suspense</option>
+              <option value="Fantasia">Fantasia</option>
+              <option value="Biografia">Biografia</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+          <!-- botão para submeter o formulário de busca -->
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id="search-btn">Buscar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <main>
+      <div class="search-results">
+          <p class="alert">
+          <h3>Resultados da Pesquisa</h3>
+          <!-- aqui os livros encontrados serão listados -->
+          <div class="book-list">
+          <!-- lista de livros será preenchida aqui -->
+           <ul id="book-list">
+           </ul>
+        </p>
+        </div>
+        <button type="button" class="clear-btn">Limpar</button>
+      </div>
+    </main>
+
+    <div class="footer"></div>
+
+    <div id="edit-modal" class="modal invisible">
+      <div class="modal-content">
+        <!-- botão para fechar a modal -->
+        <span class="close-btn" onclick="">&times;</span>
+        <!-- título da modal -->
+        <h2>Editar Livro</h2>
+        <!-- formulário de edição -->
+        <form id="edit-form">
+          <label for="edit-title">Título</label>
+          <input type="text" id="edit-title" name="title" required>
+          <label for="edit-author">Autor</label>
+          <input type="text" id="edit-author" name="author" required>  
+          <label for="edit-year">Ano de Publicação</label>
+          <input type="number" id="edit-year" name="year" required>
+          <label for="edit-pages">Número de Páginas</label>
+          <input type="number" id="edit-pages" name="pages" required>
+          <label for="edit-genre">Gênero</label>
+          <select id="edit-genre" name="genre" required>
+            <option value="" disabled selected>Selecione o gênero</option>
+            <option value="Ficção">Ficção</option>
+            <option value="Romance">Romance</option>
+            <option value="Aventura">Suspense</option>
+            <option value="Fantasia">Fantasia</option>
+            <option value="Biografia">Biografia</option>
+            <option value="Outro">Outro</option>
+          </select>
+          <label for="edit-description">Descrição</label>
+          <textarea id="edit-description" name="description" rows="4" required></textarea>
+          <!-- botão de submissão -->
+          <button type="button" class="save-edit-btn">Salvar Alterações</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/appSearch.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/footer.js"></script>
+  </body>
+</html>

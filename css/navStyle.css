@@ -1,0 +1,105 @@
+/* removendo marcadores das listas */
+ul {
+  list-style-type: none;
+}
+
+/* removendo sublinhado dos links */
+a {
+  text-decoration: none;
+}
+
+/* estilo do menu de navegação */
+nav {
+  background: #ffcbdb;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* sombra leve */
+}
+
+/* estrutura do cabeçalho de navegação */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* estilo do botão de alternância do menu */
+.nav-toggle {
+  font-size: 1.5rem;
+  color: #4f4045;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+/* efeito de hover no botão de alternância */
+.nav-toggle:hover {
+  color: #292325;
+  transform: rotate(90deg);
+}
+
+/* estilo dos links no menu */
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: #4f4045;
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+}
+
+/* efeito de hover nos links */
+.links a:hover {
+  background: #ffcbdb;
+  color: #292325;
+  padding-left: 1.5rem;
+}
+
+/* estrutura do container de links */
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+/* exibição dos links quando o menu é aberto */
+.show-links {
+  height: 110px;
+}
+
+/* responsividade para telas maiores que 800px */
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links {
+    height: auto;
+    display: flex;
+  }
+
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}

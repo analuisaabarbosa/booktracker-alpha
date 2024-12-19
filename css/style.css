@@ -1,0 +1,18 @@
+/* importando a fonte montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+/* resetando margens, preenchimentos e box-sizing */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* estrutura do conteúdo principal */
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
