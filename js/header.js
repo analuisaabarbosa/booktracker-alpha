@@ -23,8 +23,8 @@ function loadHeader(headers) {
     divHeader.classList.add("nav-header");
 
     var iconImg = document.createElement("img");
-    iconImg.setAttribute("src", "assets/imgs/navicon.png");
-    iconImg.setAttribute("alt", "logo");
+    iconImg.setAttribute("src", "/assets/imgs/navicon.png");
+    iconImg.setAttribute("alt", "Logo");
     iconImg.setAttribute("width", "35px");
     iconImg.setAttribute("height", "40px");
     iconImg.classList.add("logo");
@@ -53,7 +53,7 @@ function loadHeader(headers) {
     var liAboutus = document.createElement("li");
 
     var aboutUs = document.createElement("a");
-    aboutUs.setAttribute("href", "aboutUs.html");
+    aboutUs.setAttribute("href", "./aboutUs.html");
     aboutUs.textContent = "About Us";
 
     // montando a estrutura final do header

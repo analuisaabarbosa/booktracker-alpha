@@ -33,7 +33,7 @@ function loadFooter(footers) {
     instagram.setAttribute("role", "button");
 
     var iInstagram = document.createElement("img");
-    iInstagram.setAttribute("src", "assets/icons/instagram-brands-solid.svg");
+    iInstagram.setAttribute("src", "/assets/icons/instagram-brands-solid.svg");
     iInstagram.setAttribute("alt", "Instagram");
     iInstagram.style.width = "24px";
     iInstagram.style.height = "24px";
@@ -45,7 +45,7 @@ function loadFooter(footers) {
     facebook.setAttribute("role", "button");
 
     var iFacebook = document.createElement("img");
-    iFacebook.setAttribute("src", "assets/icons/facebook-f-brands-solid.svg");
+    iFacebook.setAttribute("src", "/assets/icons/facebook-f-brands-solid.svg");
     iFacebook.setAttribute("alt", "Facebook");
     iFacebook.style.width = "24px";
     iFacebook.style.height = "24px";
@@ -57,7 +57,7 @@ function loadFooter(footers) {
     x.setAttribute("role", "button");
 
     var iX = document.createElement("img");
-    iX.setAttribute("src", "assets/icons/x-twitter-brands-solid.svg");
+    iX.setAttribute("src", "/assets/icons/x-twitter-brands-solid.svg");
     iX.setAttribute("alt", "X");
     iX.style.width = "24px";
     iX.style.height = "24px";
