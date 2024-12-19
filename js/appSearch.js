@@ -1,38 +1,35 @@
-// evento disparado quando o conteúdo da página é carregado
+// evento principal: executado quando o conteúdo da página é carregado
+const alert = document.querySelector(".alert"); // elemento de alerta para mensagens
+
 document.addEventListener("DOMContentLoaded", function () {
-  const alert = document.querySelector(".alert"); // elemento de alerta para mensagens
-  const form = document.querySelector(".book-form"); // formulário de livros
-  const searchForm = document.getElementById("search-form"); // formulário de pesquisa
-  const searchQuery = document.getElementById("search-query"); // campo de pesquisa por título ou autor
-  const searchGenre = document.getElementById("search-genre"); // campo de pesquisa por gênero
-  const bookList = document.getElementById("book-list"); // contêiner onde os livros são listados
-  const clearBtn = document.querySelector(".clear-btn"); // botão para limpar a pesquisa
-  const editForm = document.getElementById("edit-form"); // formulário de edição de livro
+  const searchForm = document.getElementById("search-form");
+  const searchQuery = document.getElementById("search-query");
+  const searchGenre = document.getElementById("search-genre");
+  const bookList = document.getElementById("book-list");
+  const clearBtn = document.querySelector(".clear-btn");
   // seleção do modal de edição
-  const modal = document.getElementById("edit-modal"); // modal de edição
-  const closeModalBtn = document.querySelector(".close-btn"); // botão para fechar a modal
-  const saveEditBtn = document.querySelector(".save-edit-btn"); // botão de salvar edição
-  let currentBookIndex = null; // índice do livro sendo editado
+  const modal = document.getElementById("edit-modal");
+  const closeModalBtn = document.querySelector(".close-btn");
+  const saveEditBtn = document.querySelector(".save-edit-btn");
+  let currentBookIndex = null;
 
   // funções
-
-  // função para recuperar os livros do localStorage
   function getBooks() {
     return JSON.parse(localStorage.getItem("books")) || []; // retorna os livros ou um array vazio
   }
 
-  // função para exibir a lista de livros
+  // manipulação de livros
   function displayBooks(filteredBooks = null) {
-    const books = filteredBooks || getBooks(); // se não houver filtro, exibe todos os livros
-    bookList.innerHTML = ""; // limpa a lista de livros
+    const books = filteredBooks || getBooks();
+    bookList.innerHTML = "";
 
     if (books.length === 0) {
-      bookList.innerHTML = `<p class="empty-message">Nenhum livro na lista</p>`; // mensagem caso não haja livros
+      bookList.innerHTML = `<p class="empty-message">Nenhum livro na lista</p>`;
       return;
     }
 
+    // cria um item de livro
     books.forEach((book, index) => {
-      // cria um item de livro
       const bookItem = document.createElement("li");
       bookItem.classList.add("book-item");
       bookItem.innerHTML = `
@@ -193,3 +190,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // exibe a lista de livros ao carregar a página
   displayBooks();
 });
+
+// função para exibir o alerta ao usuário
+function displayAlert(text, action) {
+  alert.textContent = text; // define o texto do alerta
+  alert.classList.add(`alert-${action}`); // aplica o estilo ao alerta (sucesso ou erro)
+
+  // remove o texto e o estilo do alerta após 2 segundos
+  setTimeout(function () {
+    alert.textContent = ""; // remove o texto
+    alert.classList.remove(`alert-${action}`); // remove o estilo
+  }, 2000);
+}
