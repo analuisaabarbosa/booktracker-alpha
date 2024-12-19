@@ -18,6 +18,34 @@ document.addEventListener("DOMContentLoaded", function () {
     return JSON.parse(localStorage.getItem("books")) || []; // retorna os livros ou um array vazio
   }
 
+  // Função para buscar a capa do livro utilizando o título
+  function fetchBookCover(title, bookItem) {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${title}`;
+
+    // faz a requisição à API da Google Books
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.items && data.items.length > 0) {
+          const coverUrl = data.items[0].volumeInfo.imageLinks
+            ? data.items[0].volumeInfo.imageLinks.thumbnail
+            : "assets/imgs/default-cover.jpg";
+          displayBookCover(coverUrl, bookItem); // exibe a capa na lista
+        } else {
+          console.log("Capa não encontrada para o livro:", title);
+        }
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar a capa do livro:", error);
+      });
+  }
+
+  function displayBookCover(coverUrl, bookItem) {
+    const coverImage = bookItem.querySelector(".book-cover");
+    coverImage.src = coverUrl; // atualiza a capa do livro
+    coverImage.alt = "Capa do livro"; // descrição alternativa para a capa
+  }
+
   // manipulação de livros
   function displayBooks(filteredBooks = null) {
     const books = filteredBooks || getBooks();
@@ -39,8 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <p><strong>Páginas:</strong> ${book.pages}</p>
           <p><strong>Gênero:</strong> ${book.genre}</p>
           <p><strong>Descrição:</strong> ${book.description}</p>
-          <button class="edit-btn" data-index="${index}">Editar</button>
-          <button class="delete-btn" data-index="${index}">Deletar</button>
+          <img src="assets/imgs/default-cover.jpg" alt="Capa do livro" class="book-cover" />
+          <div class="books-btn"><button class="edit-btn" data-index="${index}">Editar</button>
+          <button class="delete-btn" data-index="${index}">Deletar</button></div>
         `;
 
       const editBtn = bookItem.querySelector(".edit-btn"); // botão de editar
@@ -71,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
           displayAlert("Livro deletado com sucesso", "success"); // exibe mensagem de sucesso
         }
       });
+
+      fetchBookCover(book.title, bookItem);
 
       bookList.appendChild(bookItem); // adiciona o item de livro à lista
     });
