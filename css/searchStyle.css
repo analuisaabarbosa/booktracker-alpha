@@ -1,3 +1,4 @@
+/* estilo geral do conteiner da lista de resultados */
 .search-container {
   margin: 20px;
   padding: 20px;
@@ -7,11 +8,13 @@
   width: 100%;
 }
 
+/* estilo do lista de resultados */
 .search-results {
   text-align: center;
   margin-bottom: 20px;
 }
 
+/* estilo do h2 */
 h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
@@ -19,6 +22,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+/* estilo do h3 */
 h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.4rem;
@@ -26,6 +30,7 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+/* estilo do botão de limpar */
 .clear-btn {
   margin-top: 10px;
   background-color: #fc85c0;
@@ -40,6 +45,7 @@ h3 {
   transition: background-color 0.3s ease;
 }
 
+/* hover do botão de limpar */
 .clear-btn:hover {
   background-color: #f17ea1;
 }
@@ -59,6 +65,7 @@ h3 {
   transition: background-color 0.3s ease;
 }
 
+/* estilo do geral do item do livro */
 .book-item {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
@@ -67,6 +74,7 @@ h3 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* estilo do título do item do livro */
 .book-item h3 {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -78,6 +86,7 @@ h3 {
   margin-bottom: 5px;
 }
 
+/* para manter a modal invisivel */
 .invisible {
   display: none !important;
 }
@@ -102,30 +111,30 @@ h3 {
 
 /* conteúdo da modal */
 .modal-content {
-  background-color: #ffcbdb; /* Cor de fundo */
+  background-color: #ffcbdb; 
   padding: 25px;
-  position: absolute; /* Posiciona a modal no centro da tela */
+  position: absolute; 
   top: 50%;
   left: 50%;
   width: 50%;
-  transform: translate(-50%, -50%); /* Centraliza a modal */
-  border-radius: 5px; /* Borda arredondada */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  transform: translate(-50%, -50%); 
+  border-radius: 5px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 /* botão de fechar da modal */
 .close-btn {
-  float: right; /* Posiciona o botão no canto superior direito */
-  font-size: 1.5rem; /* Tamanho da fonte */
-  cursor: pointer; /* Cursor de mão para indicar que é clicável */
+  float: right; 
+  font-size: 1.5rem; 
+  cursor: pointer; 
 }
 
 /* botão de salvar ou editar */
 .save-edit-btn {
-  background-color: #fc85c0; /* Cor de fundo */
-  font-weight: bold; /* Texto em negrito */
-  color: #292325; /* Cor do texto */
-  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #fc85c0; 
+  font-weight: bold; 
+  color: #292325;
+  padding: 10px 20px; 
   font-size: 1rem; 
   border: none; 
   border-radius: 4px; 
@@ -188,27 +197,31 @@ input[type="number"], select {
   outline: none; 
 }
 
-/* media query para telas menores que 768px */
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 40%; 
+    padding: 40px; 
+    border-radius: 10px; 
+  }
+}
+
 @media (max-width: 768px) {
   .modal-content {
     width: 70%; 
   }
 }
 
-/* media query para telas menores que 480px */
 @media (max-width: 480px) {
   .modal-content {
     width: 80%; 
     padding: 8px; 
   }
 
-  /* ajusta o botão de salvar/editar */
   .save-edit-btn {
     padding: 8px 16px; 
     font-size: 0.9rem; 
   }
 
-  /* ajusta o título da modal */
   .modal h2 {
     font-size: 1.2rem; 
   }

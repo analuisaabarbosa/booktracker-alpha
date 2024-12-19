@@ -5,6 +5,7 @@
   font-family: "Montserrat", sans-serif;
   padding: 1rem 0;
   text-align: center;
+  margin-top: auto;
 }
 
 /* estilo do título do rodapé */
@@ -19,4 +20,57 @@
   font-size: 0.9rem;
   line-height: 1.6;
   margin-top: 1rem;
+}
+
+/* estilo do rodapé */
+.footer {
+  background-color: #ffcbdb;
+  color: #4f4045;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* estilo do título do rodapé */
+.footer h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* estilo do parágrafo do rodapé */
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .footer h5 {
+    font-size: 1rem; 
+  }
+
+  .footer p {
+    font-size: 0.8rem; 
+    line-height: 1.4; 
+  }
+
+  .footer {
+    padding: 0.5rem 0; 
+  }
+}
+
+@media (max-width: 480px) {
+  .footer h5 {
+    font-size: 0.9rem; 
+  }
+
+  .footer p {
+    font-size: 0.75rem; 
+    line-height: 1.3; 
+  }
+
+  .footer {
+    padding: 0.25rem 0; 
+  }
 }
