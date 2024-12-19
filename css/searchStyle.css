@@ -148,6 +148,11 @@ h3 {
   background-color: #f17ea1; /
 }
 
+.book-cover {
+  align-items: center;
+  justify-content: center;
+}
+
 /* estilo do título dentro da modal */
 .modal h2 {
   margin-bottom: 5px; 
