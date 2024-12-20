@@ -50,10 +50,13 @@ JavaScript
 ```
 booktracker/
 │
-├── index.html          # Estrutura principal da aplicação
-├── style.css           # Estilos para a interface
-├── script.js           # Lógica de CRUD e busca
-└── README.md           # Documentação do projeto
+├── assets/         # Arquivos do projeto
+├── css/            # Estilos para as interfaces
+├── js/             # Lógica funcional da aplicação
+├── pages/          # Estrutura onde fica as páginas da aplicação
+├── README.md       # Documentação do projeto
+├── dockerfile      # Arquivo Docker para subir a aplicação na imagem do Nginx
+└── nginx.conf      # Conf do Nginx 
 ```
 
 
