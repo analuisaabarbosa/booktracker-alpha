@@ -23,8 +23,8 @@ function loadHeader(headers) {
     divHeader.classList.add("nav-header");
 
     var iconImg = document.createElement("img");
-    iconImg.setAttribute("src", "assets/imgs/navicon.png");
-    iconImg.setAttribute("alt", "logo");
+    iconImg.setAttribute("src", "/assets/imgs/navicon.png");
+    iconImg.setAttribute("alt", "Logo");
     iconImg.setAttribute("width", "35px");
     iconImg.setAttribute("height", "40px");
     iconImg.classList.add("logo");
@@ -32,8 +32,13 @@ function loadHeader(headers) {
     var btnToggle = document.createElement("button");
     btnToggle.classList.add("nav-toggle");
 
-    var i = document.createElement("i");
-    i.className = "fas fa-bars";
+    var iBars = document.createElement("i");
+    iBars.className = "fas fa-bars";
+
+    var imgBars = document.createElement("img");
+    imgBars.setAttribute("src", "/assets/icons/bars-solid.svg");
+    imgBars.style.width = "24px"
+    imgBars.style.width = "24px"
 
     var ul = document.createElement("ul");
     ul.classList.add("links");
@@ -48,26 +53,27 @@ function loadHeader(headers) {
 
     var search = document.createElement("a");
     search.setAttribute("href", "./search.html");
-    search.textContent = "Search";
+    search.textContent = "Pesquisar";
 
-    var liAboutus = document.createElement("li");
+    var liAddBook = document.createElement("li");
 
-    var aboutUs = document.createElement("a");
-    aboutUs.setAttribute("href", "aboutUs.html");
-    aboutUs.textContent = "About Us";
+    var addBook = document.createElement("a");
+    addBook.setAttribute("href", "./addBook.html");
+    addBook.textContent = "Adicionar livro";
 
     // montando a estrutura final do header
     divHeader.appendChild(iconImg);
     divHeader.appendChild(btnToggle);
-    btnToggle.appendChild(i);
+    btnToggle.appendChild(iBars);
+    iBars.appendChild(imgBars);
     divCenter.appendChild(divHeader);
     divCenter.appendChild(ul);
     ul.appendChild(liHome);
+    ul.appendChild(liAddBook);
     ul.appendChild(liSearch);
-    ul.appendChild(liAboutus);
     liHome.appendChild(home);
+    liAddBook.appendChild(addBook);
     liSearch.appendChild(search);
-    liAboutus.appendChild(aboutUs);
     nav.appendChild(divCenter);
     header.appendChild(nav);
 
