@@ -50,12 +50,15 @@ JavaScript
 ```
 booktracker/
 │
-├── index.html          # Estrutura principal da aplicação
-├── style.css           # Estilos para a interface
-├── script.js           # Lógica de CRUD e busca
-└── README.md           # Documentação do projeto
+├── assets/         # Arquivos do projeto
+├── css/            # Estilos para as interfaces
+├── js/             # Lógica funcional da aplicação
+├── README.md       # Documentação do projeto
+├── addBook.html    # Estrutura da página de adicionar livros
+├── dockerfile      # Arquivo Docker para subir a aplicação na imagem do Nginx
+├── index.html      # Estrutura da página principal
+└── search.html     # Estrutura da página de busca dos livros
 ```
-
 
 # 👤 Autor
 Ana Luisa Augusto Barbosa
