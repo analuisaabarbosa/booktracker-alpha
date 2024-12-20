@@ -4,106 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Booktracker</title>
-    <link rel="stylesheet" href="/css/navStyle.css" />
-    <link rel="stylesheet" href="/css/formStyle.css">
-    <link rel="stylesheet" href="/css/footerStyle.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/alertStyle.css">
-    <link rel="icon" href="/assets/imgs/favicon.png" type="image.png" />
-    <!-- usando cdn somente para o toggle -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/navStyle.css" />
+    <link rel="stylesheet" href="../css/formStyle.css" />
+    <link rel="stylesheet" href="../css/footerStyle.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/homeStyle.css">
+    <link rel="stylesheet" href="../css/alertStyle.css" />
+    <link rel="icon" href="./assets/imgs/favicon.png" type="image.png" />
   </head>
   <body>
     <div class="header"></div>
 
     <main>
-      <div class="form-container">
-        <form class="book-form">
-          <p class="alert">
-            <h2 class="text-center mb-4">Adicione um livro:</h2>
-          <!-- campo para o título do livro -->
-          <div class="form-group">
-            <label for="title">Título:</label>
-            <input
-              type="text"
-              id="title"
-              class="form-control"
-              placeholder="Digite o título do livro"
-              required
-            />
-          </div>
-          <!-- campo para o nome do autor -->
-          <div class="form-group">
-            <label for="author">Autor:</label>
-            <input
-              type="text"
-              id="author"
-              class="form-control"
-              placeholder="Digite o nome do autor"
-              required
-            />
-          </div>
-          <!-- campo para o ano de publicação -->
-          <div class="form-group">
-            <label for="year">Ano de Publicação:</label>
-            <input
-              type="number"
-              id="year"
-              class="form-control"
-              placeholder="Digite o ano de publicação"
-              required
-            />
-          </div>
-          <!-- campo para o número de páginas -->
-          <div class="form-group">
-            <label for="pages">Número de Páginas:</label>
-            <input
-              type="number"
-              id="pages"
-              class="form-control"
-              placeholder="Digite o número de páginas"
-              required
-            />
-          </div>
-          <!-- campo para selecionar o gênero do livro -->
-          <div class="form-group">
-            <label for="genre">Gênero:</label>
-            <select id="genre" class="form-control" required>
-              <option value="" disabled selected>Selecione o gênero</option>
-              <option value="Ficção">Ficção</option>
-              <option value="Romance">Romance</option>
-              <option value="Suspense">Suspense</option>
-              <option value="Fantasia">Fantasia</option>
-              <option value="Biografia">Biografia</option>
-              <option value="Outro">Outro</option>
-            </select>
-          </div>
-          <!-- campo para descrição do livro -->
-          <div class="form-group">
-            <label for="description">Descrição:</label>
-            <textarea
-              id="description"
-              class="form-control"
-              placeholder="Descreva o livro"
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          <!-- botão para submeter o formulário -->
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Adicionar</button>
-          </div>
-          </p>
-          <!-- título do formulário -->
-        </form>
+      <div class="square">
+        <h1>Bem vindo ao Booktracker!</h1>
+        <p>
+          Você já perdeu a conta de quantos livros incríveis leu ou tem
+          dificuldade para acompanhar todas as suas leituras? O BookTracker está
+          aqui para te ajudar! Este é um sistema simples e eficiente, pensado
+          para amantes de livros que querem organizar e registrar suas leituras
+          de forma prática e moderna.
+        </p>
+        <p>
+          Nosso objetivo é tornar sua experiência com a leitura ainda mais
+          prazerosa e dinâmica. A ferramenta foi projetada para ser intuitiva e
+          acessível, permitindo que você adicione, edite ou remova livros com
+          apenas alguns cliques.
+        </p>
+        <p>
+          Na página inicial, você encontrará as funcionalidades principais para
+          explorar e gerenciar sua coleção. Também oferecemos uma página de
+          pesquisa integrada com uma API que traz a capa dos livros
+          automaticamente, facilitando a identificação visual do seu acervo.
+        </p>
+        <p>
+          BookTracker é mais do que uma ferramenta: é um espaço para você
+          cultivar e celebrar sua paixão pela leitura. Seja para manter o
+          controle dos livros que marcaram sua vida ou para planejar suas
+          próximas aventuras literárias, o BookTracker é o seu aliado.
+        </p>
+        <p>
+          Comece agora a criar sua biblioteca virtual e descubra como é fácil
+          organizar o universo de histórias que você ama!
+        </p>
       </div>
     </main>
 
     <div class="footer"></div>
 
-    <script src="/js/app.js"></script>
-    <script src="/js/header.js"></script>
-    <script src="/js/nav.js"></script>
-    <script src="/js/footer.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/footer.js"></script>
   </body>
 </html>
